@@ -4,7 +4,9 @@
   "description": "Node.js + Express server for boilerplate",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "yarn run build && node dist/app.js",
+    "build": "babel app.js -d dist",
+    "dev": "npx nodemon --exec babel-node app.js"
   },
   "author": "Wilhelm Willie",
   "license": "ISC",
@@ -12,6 +14,14 @@
     "express": "^4.17.1",
     "express-graphql": "^0.8.0",
     "graphql": "^14.3.1",
-    "mongoose": "^5.5.11"
+    "graphql-tools": "^4.0.4",
+    "mongoose": "^5.5.11",
+    "passport": "^0.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
   }
 }
