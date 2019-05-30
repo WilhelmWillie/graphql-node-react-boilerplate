@@ -7,9 +7,9 @@ In addition, this boilerplate will be designed to be production ready so you can
 
 If you use this boilerplate for any of your projects, feel free to let me know so I can add you to this README 🙂
 
-## Microblog
+## The Boilerplate App: Backlog
 
-Out of the box, this boilerplate is a simplified microblogging app (basically Twitter). Users can sign-in with a Google account, create posts, and follow other users. 
+The app I built for this boilerplate is Backlog: an app that let's users create and share their to-do lists. Users can sign-in with a Google account, create a to-do list (a backlog), and follow other user's backlogs. This sample app will hopefully lay the foundation for future apps built with this tech stack.
 
 ## Tech Details
 * Front-end
