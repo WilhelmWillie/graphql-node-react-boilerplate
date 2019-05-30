@@ -1,0 +1,6 @@
+type Backlog {
+  id: ID!,
+  title: String
+  author: User
+  tasks: [Task]
+}

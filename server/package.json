@@ -15,6 +15,7 @@
     "express-graphql": "^0.8.0",
     "graphql": "^14.3.1",
     "graphql-tools": "^4.0.4",
+    "lodash": "^4.17.11",
     "mongoose": "^5.5.11",
     "passport": "^0.4.0"
   },
@@ -22,6 +23,7 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.4.5",
-    "@babel/preset-env": "^7.4.5"
+    "@babel/preset-env": "^7.4.5",
+    "babel-plugin-import-graphql": "^2.7.0"
   }
 }

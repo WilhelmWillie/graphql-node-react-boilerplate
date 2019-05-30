@@ -1,0 +1,5 @@
+type Query {
+  users: [User]
+  backlog(userId: ID!): Backlog
+  tasks(backlogId: ID!): [Task]
+}

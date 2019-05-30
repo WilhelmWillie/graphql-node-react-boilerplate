@@ -1,0 +1,6 @@
+type Task {
+  backlog: Backlog
+  title: String
+  description: String
+  priority: Int
+}
