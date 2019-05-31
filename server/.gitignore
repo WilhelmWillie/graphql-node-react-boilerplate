@@ -85,3 +85,6 @@ typings/
 
 # Babel build output
 dist/
+
+# DB
+db/
