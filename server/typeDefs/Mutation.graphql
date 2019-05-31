@@ -1,3 +1,16 @@
 type Mutation {
-  addTask(backlogId: ID!, title: String!): Task
+  createUser(
+    name: String!,
+    email: String!
+  ): User
+  editBacklog(
+    backlogId: ID!,
+    title: String!
+  ): Backlog
+  addTask(
+    backlogId: ID!,
+    title: String!,
+    description: String,
+    priority: Int
+  ): Task
 }

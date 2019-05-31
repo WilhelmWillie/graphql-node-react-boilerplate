@@ -5,9 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "yarn run build && node dist/app.js",
-    "build": "babel app.js -d dist",
+    "build": "babel app.js schema.js ./models ./resolvers ./typeDefs -d dist",
     "dev": "npx nodemon --exec babel-node app.js",
-    "db": "mongod --dbpath=./db"
+    "db": "mongod --dbpath=./db",
+    "babel:clear": "rm -rf ./node_modules/.cache/@babel"
   },
   "author": "Wilhelm Willie",
   "license": "ISC",

@@ -1,5 +1,9 @@
 type User {
   id: ID!
-  name: String
+  name: String!
+  email: String!
+  status: String
+  link: String
   backlog: Backlog
+  createdAt: String
 }

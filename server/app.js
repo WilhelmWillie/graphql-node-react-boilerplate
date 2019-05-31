@@ -6,7 +6,7 @@ import graphqlHTTP from 'express-graphql';
 const db = mongoose.connect(process.env.DB || 'mongodb://localhost/backlog')
 
 // Import GraphQL schema
-import schema from './schema';
+import schema from './schema.js';
 
 const app = express();
 
