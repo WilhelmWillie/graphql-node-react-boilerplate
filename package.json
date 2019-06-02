@@ -1,0 +1,22 @@
+{
+  "name": "graphql-node-react-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for full stack web apps ",
+  "main": "server/app.js",
+  "scripts": {
+    "postinstall": "npm install --prefix server && npm install --prefix client",
+    "prod": "npm run --prefix client build && npm --prefix server start",
+    "dev:client": "yarn --cwd client start",
+    "dev:server": "yarn --cwd server dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilhelmWillie/graphql-node-react-boilerplate.git"
+  },
+  "author": "Wilhelm Willie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WilhelmWillie/graphql-node-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/WilhelmWillie/graphql-node-react-boilerplate#readme"
+}
