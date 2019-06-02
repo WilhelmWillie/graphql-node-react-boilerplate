@@ -1,8 +1,6 @@
-import { importSchema } from 'graphql-import';
-
-const Backlog= importSchema('./Backlog.graphql');
-const Task = importSchema('./Task.graphql');
-const User = importSchema('./User.graphql');
+import Backlog from './Backlog';
+import Task from './Task';
+import User from './User';
 
 export default [
   Backlog,
