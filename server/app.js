@@ -16,7 +16,4 @@ app.use('/graphql', graphqlHTTP({
     graphiql: process.env.NODE_ENV !== 'production'
 }))
 
-const port = process.env.PORT || 8000;
-app.listen(port, () => {
-  console.log(`🚀 Server live on port ${port}`)
-})
+export default app;

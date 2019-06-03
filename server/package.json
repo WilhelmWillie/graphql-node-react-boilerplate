@@ -6,7 +6,7 @@
   "scripts": {
     "start": "yarn run build && node dist/app.js",
     "build": "babel app.js schema.js ./models ./resolvers ./typeDefs -d dist",
-    "dev": "npx nodemon --exec babel-node app.js",
+    "dev": "npx nodemon --exec babel-node server.js",
     "db": "mongod --dbpath=./db",
     "babel:clear": "rm -rf ./node_modules/.cache/@babel"
   },
