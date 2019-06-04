@@ -1,11 +1,11 @@
 import { User } from "../../models";
 
 const users = () => {
-  return null;
+  return User.find();
 };
 
 const user = (obj, { userId }) => {
-  return null;
+  return User.findById(userId);
 };
 
 export default {

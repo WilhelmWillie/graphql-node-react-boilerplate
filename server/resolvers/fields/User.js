@@ -1,7 +1,7 @@
-import { User } from "../../models";
+import { User, Backlog } from "../../models";
 
 const backlog = user => {
-  return null;
+  return Backlog.findById(user.backlog);
 };
 
 export default {

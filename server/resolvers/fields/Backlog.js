@@ -5,7 +5,7 @@ const user = backlog => {
 };
 
 const tasks = backlog => {
-  return null;
+  return backlog.tasks;
 };
 
 export default {
