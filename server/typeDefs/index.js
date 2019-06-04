@@ -1,7 +1,9 @@
+import { importSchema } from 'graphql-import';
+
 import types from './types';
 
-const Query = './Query';
-const Mutation = './Mutation';
+import Query from './Query.graphql';
+import Mutation from './Mutation.graphql';
 
 export default [
   ...types,

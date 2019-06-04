@@ -1,0 +1,10 @@
+type Task {
+  id: ID!
+  title: String!
+  backlog: Backlog!
+  description: String
+  priority: Int
+  completed: Boolean
+  updatedAt: String
+  createdAt: String
+}

@@ -1,3 +1,7 @@
+/*
+  Express app setup and configuration
+*/
+
 import express from 'express';
 import mongoose from 'mongoose';
 import graphqlHTTP from 'express-graphql';

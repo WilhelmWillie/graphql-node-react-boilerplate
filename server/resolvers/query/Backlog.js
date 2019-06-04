@@ -1,7 +1,7 @@
 import { Backlog } from '../../models';
 
 const backlog = (obj, { userId }) => {
-  return null;
+  return Backlog.findById(userId)
 }
 
 export default {

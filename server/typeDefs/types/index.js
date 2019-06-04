@@ -1,6 +1,6 @@
-import Backlog from './Backlog';
-import Task from './Task';
-import User from './User';
+import Backlog from './Backlog.graphql';
+import Task from './Task.graphql';
+import User from './User.graphql';
 
 export default [
   Backlog,
