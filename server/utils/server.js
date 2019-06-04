@@ -3,7 +3,7 @@
 */
 
 // Normalize a port into a number, string, or false.
-const serverNormalizePort = (val) => {
+const serverNormalizePort = val => {
   const port = parseInt(val, 10);
 
   if (isNaN(port)) {
@@ -17,38 +17,34 @@ const serverNormalizePort = (val) => {
   }
 
   return false;
-}
+};
 
 // Event listener for HTTP server "error" event.
-const serverOnError = (error) => {
-  if (error.syscall !== 'listen') {
+const serverOnError = error => {
+  if (error.syscall !== "listen") {
     throw error;
   }
 
-  const bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  const bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+    case "EACCES":
+      console.error(bind + " requires elevated privileges");
       process.exit(1);
       break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+    case "EADDRINUSE":
+      console.error(bind + " is already in use");
       process.exit(1);
       break;
     default:
       throw error;
   }
-}
+};
 
 // Event listener for HTTP server "listening" event
 const serverOnListening = () => {
   const addr = server.address();
-  const bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  console.log('Listening on ' + bind);
-}
+  const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+  console.log("Listening on " + bind);
+};

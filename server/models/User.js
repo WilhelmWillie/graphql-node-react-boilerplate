@@ -1,4 +1,4 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema } from "mongoose";
 
 const UserSchema = new Schema({
   name: {
@@ -11,20 +11,20 @@ const UserSchema = new Schema({
   },
   status: {
     type: String,
-    default: ''
+    default: ""
   },
   link: {
     type: String,
-    default: ''
+    default: ""
   },
   backlog: {
     type: Schema.ObjectId,
-    ref: 'Backlog'
+    ref: "Backlog"
   },
   createdAt: {
     type: Date,
     default: Date.now
-  },
-})
+  }
+});
 
-export default mongoose.model('User', UserSchema);
+export default mongoose.model("User", UserSchema);

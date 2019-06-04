@@ -1,9 +1,9 @@
-import { Task } from '../../models';
+import { Task } from "../../models";
 
-const backlog = (task) => {
+const backlog = task => {
   return null;
-}
+};
 
 export default {
   backlog
-}
+};

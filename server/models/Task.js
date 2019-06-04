@@ -1,4 +1,4 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema } from "mongoose";
 
 const TaskSchema = new Schema({
   title: {
@@ -7,12 +7,12 @@ const TaskSchema = new Schema({
   },
   backlog: {
     type: Schema.ObjectId,
-    ref: 'Backlog',
+    ref: "Backlog",
     required: true
   },
   description: {
     type: String,
-    default: ''
+    default: ""
   },
   priority: {
     type: Number,
@@ -29,7 +29,7 @@ const TaskSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  },
-})
+  }
+});
 
-export default mongoose.model('Task', TaskSchema);
+export default mongoose.model("Task", TaskSchema);

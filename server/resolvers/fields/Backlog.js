@@ -1,14 +1,14 @@
-import { Backlog } from '../../models';
+import { Backlog } from "../../models";
 
-const user = (backlog) => {
+const user = backlog => {
   return null;
-}
+};
 
-const tasks = (backlog) => {
+const tasks = backlog => {
   return null;
-}
+};
 
 export default {
   user,
   tasks
-}
+};

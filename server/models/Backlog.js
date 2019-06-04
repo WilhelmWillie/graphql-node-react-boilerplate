@@ -1,4 +1,4 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema } from "mongoose";
 
 const BacklogSchema = new Schema({
   title: {
@@ -7,13 +7,13 @@ const BacklogSchema = new Schema({
   },
   user: {
     type: Schema.ObjectId,
-    ref: 'User',
+    ref: "User",
     required: true
   },
   task: [
     {
       type: Schema.ObjectId,
-      ref: 'Task'
+      ref: "Task"
     }
   ],
   updatedAt: {
@@ -23,7 +23,7 @@ const BacklogSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  },
-})
+  }
+});
 
-export default mongoose.model('Backlog', BacklogSchema);
+export default mongoose.model("Backlog", BacklogSchema);
