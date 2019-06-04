@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/WilhelmWillie/graphql-node-react-boilerplate/issues"
   },
-  "homepage": "https://github.com/WilhelmWillie/graphql-node-react-boilerplate#readme"
+  "homepage": "https://github.com/WilhelmWillie/graphql-node-react-boilerplate#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "l": "^0.6.0"
+  }
 }
