@@ -43,8 +43,10 @@ const serverOnError = error => {
 };
 
 // Event listener for HTTP server "listening" event
-const serverOnListening = () => {
+const serverOnListening = server => {
   const addr = server.address();
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   console.log("Listening on " + bind);
 };
+
+export { serverNormalizePort, serverOnError, serverOnListening };
