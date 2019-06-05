@@ -15,4 +15,5 @@ type Mutation {
   ): Task
   toggleTaskCompletion(taskId: ID!): Task
   editTask(taskId: ID!, input: TaskInput): Task
+  deleteTask(taskId: ID!): Task
 }

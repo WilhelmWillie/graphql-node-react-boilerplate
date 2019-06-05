@@ -33,8 +33,13 @@ const editTask = async (obj, { taskId, input }) => {
   return newTask;
 };
 
+const deleteTask = (obj, { taskId }) => {
+  return Task.findOneAndDelete(taskId);
+};
+
 export default {
   addTask,
   toggleTaskCompletion,
-  editTask
+  editTask,
+  deleteTask
 };
