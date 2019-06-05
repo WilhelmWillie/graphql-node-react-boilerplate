@@ -18,6 +18,23 @@ const addTask = async (obj, { backlogId, title, description, priority }) => {
   return task;
 };
 
+const toggleTaskCompletion = async (obj, { taskId }) => {
+  const task = await Task.findById(taskId);
+  task.completed = !task.completed;
+
+  return task.save();
+};
+
+const editTask = async (obj, { taskId, input }) => {
+  const newTask = await Task.findOneAndUpdate(taskId, input, { new: true });
+
+  console.log(newTask);
+
+  return newTask;
+};
+
 export default {
-  addTask
+  addTask,
+  toggleTaskCompletion,
+  editTask
 };

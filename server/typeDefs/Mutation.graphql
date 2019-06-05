@@ -1,16 +1,18 @@
+input TaskInput {
+  title: String
+  description: String
+  priority: Int
+}
+
 type Mutation {
-  createUser(
-    name: String!,
-    email: String!
-  ): User
-  editBacklog(
-    backlogId: ID!,
-    title: String!
-  ): Backlog
+  createUser(name: String!, email: String!): User
+  editBacklog(backlogId: ID!, title: String!): Backlog
   addTask(
-    backlogId: ID!,
-    title: String!,
-    description: String,
+    backlogId: ID!
+    title: String!
+    description: String
     priority: Int
   ): Task
+  toggleTaskCompletion(taskId: ID!): Task
+  editTask(taskId: ID!, input: TaskInput): Task
 }
