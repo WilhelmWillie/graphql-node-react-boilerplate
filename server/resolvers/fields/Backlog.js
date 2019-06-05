@@ -1,11 +1,13 @@
 import { Backlog } from "../../models";
 
-const user = backlog => {
-  return null;
+const user = async backlog => {
+  const _backlog = await Backlog.findById(backlog).populate("user");
+  return _backlog.user;
 };
 
-const tasks = backlog => {
-  return backlog.tasks;
+const tasks = async backlog => {
+  const _backlog = await Backlog.findById(backlog).populate("tasks");
+  return _backlog.tasks;
 };
 
 export default {

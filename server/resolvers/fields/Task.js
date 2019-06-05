@@ -1,7 +1,7 @@
-import { Task } from "../../models";
+import { Task, Backlog } from "../../models";
 
 const backlog = task => {
-  return null;
+  return Backlog.findById(task.backlog);
 };
 
 export default {
