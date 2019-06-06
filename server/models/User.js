@@ -21,6 +21,10 @@ const UserSchema = new Schema({
     type: Schema.ObjectId,
     ref: "Backlog"
   },
+  updatedAt: {
+    type: Date,
+    default: Date.now
+  },
   createdAt: {
     type: Date,
     default: Date.now
