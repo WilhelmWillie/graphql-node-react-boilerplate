@@ -1,13 +1,13 @@
 import { Task, Backlog } from "../../models";
 
-const addTask = async (obj, { backlogId, title, description, priority }) => {
+const addTask = async (obj, { backlogId, input }) => {
   const backlog = await Backlog.findById(backlogId);
 
   const task = new Task({
     backlog: backlogId,
-    title,
-    description,
-    priority
+    title: input.title,
+    description: input.description,
+    priority: input.priority
   });
 
   task.save();

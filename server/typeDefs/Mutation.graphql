@@ -7,12 +7,7 @@ input TaskInput {
 type Mutation {
   createUser(name: String!, email: String!): User
   editBacklog(backlogId: ID!, title: String!): Backlog
-  addTask(
-    backlogId: ID!
-    title: String!
-    description: String
-    priority: Int
-  ): Task
+  addTask(backlogId: ID!, input: TaskInput): Task
   toggleTaskCompletion(taskId: ID!): Task
   editTask(taskId: ID!, input: TaskInput): Task
   deleteTask(taskId: ID!): Task
