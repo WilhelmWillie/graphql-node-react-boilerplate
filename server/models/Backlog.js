@@ -26,4 +26,10 @@ const BacklogSchema = new Schema({
   }
 });
 
+BacklogSchema.pre("save", function(next) {
+  const currentDate = new Date();
+  this.updatedAt = currentDate;
+  next();
+});
+
 export default mongoose.model("Backlog", BacklogSchema);
