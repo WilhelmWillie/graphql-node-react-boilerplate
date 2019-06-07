@@ -3,6 +3,7 @@
     "@babel/preset-env"
   ],
   "plugins": [
-    "import-graphql"
+    "import-graphql",
+    "@babel/plugin-transform-runtime"
   ]
 }

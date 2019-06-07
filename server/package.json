@@ -8,11 +8,13 @@
     "build": "babel app.js schema.js ./models ./resolvers ./typeDefs -d dist",
     "dev": "npx nodemon --exec babel-node server.js",
     "db": "mongod --dbpath=./db",
-    "babel:clear": "rm -rf ./node_modules/.cache/@babel"
+    "babel:clear": "rm -rf ./node_modules/.cache/@babel",
+    "test": "mocha --require @babel/register 'test/*.test.js' --exit"
   },
   "author": "Wilhelm Willie",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.4.5",
     "express": "^4.17.1",
     "express-graphql": "^0.8.0",
     "global": "^4.3.2",
@@ -27,7 +29,9 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/node": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
     "babel-plugin-import-graphql": "^2.7.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
