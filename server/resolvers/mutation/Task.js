@@ -3,6 +3,11 @@ import { Task, Backlog } from "../../models";
 const addTask = async (obj, { backlogId, input }) => {
   const backlog = await Backlog.findById(backlogId);
 
+  // Error handling
+  if (!backlog) {
+    throw new Error("Cannot find backlog with that ID");
+  }
+
   const task = new Task({
     backlog: backlogId,
     title: input.title,
@@ -20,6 +25,12 @@ const addTask = async (obj, { backlogId, input }) => {
 
 const toggleTaskCompletion = async (obj, { taskId }) => {
   const task = await Task.findById(taskId);
+
+  // Error handling
+  if (!task) {
+    throw new Error("Cannot find task with that ID");
+  }
+
   task.completed = !task.completed;
 
   return task.save();
@@ -28,13 +39,18 @@ const toggleTaskCompletion = async (obj, { taskId }) => {
 const editTask = async (obj, { taskId, input }) => {
   const newTask = await Task.findOneAndUpdate(taskId, input, { new: true });
 
-  console.log(newTask);
-
   return newTask;
 };
 
 const deleteTask = (obj, { taskId }) => {
-  return Task.findOneAndDelete(taskId);
+  const task = Task.findOneAndDelete(taskId);
+
+  // Error handling
+  if (!task) {
+    throw new Error("Cannot find task with that ID");
+  }
+
+  return task;
 };
 
 export default {
