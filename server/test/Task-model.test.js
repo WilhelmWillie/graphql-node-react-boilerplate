@@ -2,16 +2,16 @@ import chai from "chai";
 
 import mongoose from "mongoose";
 
-import { Backlog, User } from "../models";
+import { Task, User, Backlog } from "../models";
 
 const expect = chai.expect;
 
 // Connect to MongoDB database
 mongoose.connect("mongodb://localhost/backlog-test");
 
-describe("Backlog Model", () => {
+describe("Task Model", () => {
   beforeEach(done => {
-    Backlog.collection.drop(() => {
+    Task.collection.drop(() => {
       done();
     });
   });
@@ -24,6 +24,8 @@ describe("Backlog Model", () => {
       email: "bob@example.com"
     });
 
+    user.save();
+
     const backlog = new Backlog({
       title: `Backlog`,
       user: user,
@@ -31,6 +33,15 @@ describe("Backlog Model", () => {
     });
 
     backlog.save();
+
+    const task = new Task({
+      backlog: backlog,
+      title: "New Task",
+      description: "Test description",
+      priority: 3
+    });
+
+    task.save();
 
     expect(backlog.updatedAt, date);
     expect(backlog.createdAt, date);
