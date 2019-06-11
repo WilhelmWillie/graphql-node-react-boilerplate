@@ -12,7 +12,7 @@ const expect = chai.expect;
 // Connect to MongoDB database
 mongoose.connect(process.env.DB_TEST || "mongodb://localhost/backlog-test");
 
-describe("User Model", () => {
+describe("User Query", () => {
   const newUsers = [];
   beforeEach(done => {
     dropUsers(() => {
