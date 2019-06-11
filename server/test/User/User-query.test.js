@@ -5,6 +5,8 @@ import mongoose from "mongoose";
 import { User } from "../../models";
 import Query from "../../resolvers/query";
 
+import { dropUsers } from "../utils";
+
 const expect = chai.expect;
 
 // Connect to MongoDB database
@@ -13,7 +15,7 @@ mongoose.connect(process.env.DB_TEST || "mongodb://localhost/backlog-test");
 describe("User Model", () => {
   const newUsers = [];
   beforeEach(done => {
-    User.collection.drop(() => {
+    dropUsers(() => {
       newUsers.length = 0;
 
       for (let i = 0; i < 10; i++) {

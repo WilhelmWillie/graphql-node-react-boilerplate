@@ -3,6 +3,7 @@ import chai from "chai";
 import mongoose from "mongoose";
 
 import { User } from "../../models";
+import { dropUsers } from "../utils";
 
 const expect = chai.expect;
 
@@ -11,7 +12,7 @@ mongoose.connect(process.env.DB_TEST || "mongodb://localhost/backlog-test");
 
 describe("User Model", () => {
   beforeEach(done => {
-    User.collection.drop(() => {
+    dropUsers(() => {
       done();
     });
   });
