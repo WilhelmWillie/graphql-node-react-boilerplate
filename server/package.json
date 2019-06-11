@@ -9,7 +9,7 @@
     "dev": "npx nodemon --exec babel-node server.js",
     "db": "mongod --dbpath=./db",
     "babel:clear": "rm -rf ./node_modules/.cache/@babel",
-    "test": "mocha --require @babel/register 'test/*.test.js' --exit"
+    "test": "mocha --require @babel/register 'test/**/*.test.js' --exit"
   },
   "author": "Wilhelm Willie",
   "license": "ISC",

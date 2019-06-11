@@ -11,6 +11,8 @@ const user = (obj, { userId }) => {
   if (!user) {
     throw new Error("Cannot find user with that ID");
   }
+
+  return user;
 };
 
 export default {

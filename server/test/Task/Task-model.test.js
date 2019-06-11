@@ -2,7 +2,7 @@ import chai from "chai";
 
 import mongoose from "mongoose";
 
-import { Task, User, Backlog } from "../models";
+import { Task, User, Backlog } from "../../models";
 
 const expect = chai.expect;
 
