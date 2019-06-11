@@ -7,7 +7,7 @@ import { Backlog, User } from "../../models";
 const expect = chai.expect;
 
 // Connect to MongoDB database
-mongoose.connect("mongodb://localhost/backlog-test");
+mongoose.connect(process.env.DB_TEST || "mongodb://localhost/backlog-test");
 
 describe("Backlog Model", () => {
   beforeEach(done => {

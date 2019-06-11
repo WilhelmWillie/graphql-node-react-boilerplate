@@ -8,7 +8,7 @@ import Query from "../../resolvers/query";
 const expect = chai.expect;
 
 // Connect to MongoDB database
-mongoose.connect("mongodb://localhost/backlog-test");
+mongoose.connect(process.env.DB_TEST || "mongodb://localhost/backlog-test");
 
 describe("User Model", () => {
   const newUsers = [];
