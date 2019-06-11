@@ -18,6 +18,10 @@ const createUser = (obj, { name, email }) => {
   return user.save();
 };
 
+const followUser = (obj, { userId, targetId }) => {};
+
+const unfollowUser = (obj, { userId, targetId }) => {};
+
 export default {
   createUser
 };

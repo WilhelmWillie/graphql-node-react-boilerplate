@@ -11,4 +11,6 @@ type Mutation {
   toggleTaskCompletion(taskId: ID!): Task
   editTask(taskId: ID!, input: TaskInput): Task
   deleteTask(taskId: ID!): Task
+  followUser(userId: ID!, targetId: ID!): User
+  unfollowUser(userId: ID!, targetId: ID!): User
 }

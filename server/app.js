@@ -5,9 +5,11 @@
 import express from "express";
 import mongoose from "mongoose";
 import graphqlHTTP from "express-graphql";
+import bluebird from "bluebird";
 
 // Connect to our MongoDB instance
 const db = mongoose.connect(process.env.DB || "mongodb://localhost/backlog");
+mongoose.Promise = bluebird;
 
 // Import GraphQL schema
 import schema from "./schema.js";
