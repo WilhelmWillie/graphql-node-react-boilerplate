@@ -1,5 +1,5 @@
 import { User } from "../../models";
 
 export default cb => {
-  User.collection.drop(cb());
+  User.deleteMany({}, cb);
 };

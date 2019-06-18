@@ -17,8 +17,6 @@ describe("User Model", () => {
     });
   });
 
-  /*
-  TEMP: Re-do this
   it("Prevent duplicate accounts", done => {
     const userA = new User({
       name: "Bob",
@@ -32,10 +30,9 @@ describe("User Model", () => {
       email: "bob@example.com"
     });
 
-    userB.save(result => {
-      expect(result).to.be.null;
+    userB.save(err => {
+      expect(err).to.not.be.null;
       done();
     });
   });
-  */
 });
