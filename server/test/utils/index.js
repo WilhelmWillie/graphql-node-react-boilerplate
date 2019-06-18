@@ -1,3 +1,4 @@
 import dropUsers from "./dropUsers";
+import createUser from "./createUser";
 
-export { dropUsers };
+export { dropUsers, createUser };
