@@ -37,7 +37,7 @@ describe("User Mutation", () => {
     );
   });
 
-  it("Follow user", async () => {
+  it("Follow then unfollow user", async () => {
     const userA = await createUser({
       name: "User A",
       email: "usera@example.com"
@@ -48,7 +48,7 @@ describe("User Mutation", () => {
       email: "userb@example.com"
     });
 
-    const result = await Mutation.followUser(
+    let result = await Mutation.followUser(
       {},
       {
         userId: userA._id,
@@ -56,13 +56,18 @@ describe("User Mutation", () => {
       }
     );
 
-    console.log(result);
-
     expect(result.user.following.indexOf(userB._id)).to.not.equal(-1);
     expect(result.target.followers.indexOf(userA._id)).to.not.equal(-1);
-  });
 
-  it("Unfollow user", done => {
-    done();
+    result = await Mutation.unfollowUser(
+      {},
+      {
+        userId: userA._id,
+        targetId: userB._id
+      }
+    );
+
+    expect(result.user.following.indexOf(userB._id)).to.equal(-1);
+    expect(result.target.followers.indexOf(userA._id)).to.equal(-1);
   });
 });

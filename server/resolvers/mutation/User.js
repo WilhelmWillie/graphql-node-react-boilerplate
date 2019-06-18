@@ -1,5 +1,7 @@
 import { User, Backlog } from "../../models";
 
+import { remove } from "lodash";
+
 const createUser = (obj, { name, email }) => {
   const user = new User({
     name,
@@ -34,7 +36,21 @@ const followUser = async (obj, { userId, targetId }) => {
   };
 };
 
-const unfollowUser = (obj, { userId, targetId }) => {};
+const unfollowUser = async (obj, { userId, targetId }) => {
+  const user = await User.findById(userId).exec();
+  const target = await User.findById(targetId).exec();
+
+  user.following = remove(user.following, item => item === targetId);
+  target.followers = remove(target.followers, item => item === userId);
+
+  const updatedUser = await user.save();
+  const updatedTarget = await target.save();
+
+  return {
+    user: updatedUser,
+    target: updatedTarget
+  };
+};
 
 export default {
   createUser,
