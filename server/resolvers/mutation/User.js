@@ -20,6 +20,12 @@ const createUser = (obj, { name, email }) => {
   return user.save();
 };
 
+const editUser = async (obj, { userId, input }) => {
+  const newUser = await User.findOneAndUpdate(userId, input, { new: true });
+
+  return newUser;
+};
+
 const followUser = async (obj, { userId, targetId }) => {
   const user = await User.findById(userId).exec();
   const target = await User.findById(targetId).exec();
@@ -54,6 +60,7 @@ const unfollowUser = async (obj, { userId, targetId }) => {
 
 export default {
   createUser,
+  editUser,
   followUser,
   unfollowUser
 };

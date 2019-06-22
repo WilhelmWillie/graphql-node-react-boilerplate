@@ -37,6 +37,41 @@ describe("User Mutation", () => {
     );
   });
 
+  it("Edit user", done => {
+    const input = {
+      name: "user test",
+      email: "user@test.com"
+    };
+
+    Mutation.createUser({}, input).then(
+      user => {
+        expect(user.name).to.equal("user test");
+        expect(user.email).to.equal("user@test.com");
+
+        Mutation.editUser(
+          {},
+          {
+            userId: user._id,
+            input: {
+              name: "new user test"
+            }
+          }
+        ).then(
+          user => {
+            expect(user.name).to.equal("new user test");
+            done();
+          },
+          () => {
+            done();
+          }
+        );
+      },
+      () => {
+        done();
+      }
+    );
+  });
+
   it("Follow then unfollow user", async () => {
     const userA = await createUser({
       name: "User A",

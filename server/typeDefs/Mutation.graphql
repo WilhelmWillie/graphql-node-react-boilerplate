@@ -4,8 +4,15 @@ input TaskInput {
   priority: Int
 }
 
+input UserInput {
+  name: String
+  status: String
+  link: String
+}
+
 type Mutation {
   createUser(name: String!, email: String!): User
+  editUser(userId: ID!, input: UserInput): User
   editBacklog(backlogId: ID!, title: String!): Backlog
   addTask(backlogId: ID!, input: TaskInput): Task
   toggleTaskCompletion(taskId: ID!): Task
