@@ -23,7 +23,7 @@
     "graphql-import": "^0.7.1",
     "graphql-tools": "^4.0.4",
     "lodash": "^4.17.11",
-    "mongoose": "^5.5.11",
+    "mongoose": "^5.7.5",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0"
   },
